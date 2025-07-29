@@ -110,11 +110,9 @@ button {
   text-transform: uppercase;
   color: var(--text1);
   text-decoration: none;
-  background-image: linear-gradient(
-    to right,
-    var(--accent) 75%,
-    var(--accent) 75%
-  );
+  background-image: linear-gradient(to right,
+      var(--accent) 75%,
+      var(--accent) 75%);
   background-position: 0 2.1em;
   background-repeat: repeat-x;
   background-size: 8px 2px;
@@ -182,11 +180,11 @@ svg {
   flex: 1 0 100%;
 }
 
-.header__social > svg > path {
+.header__social>svg>path {
   transition: fill var(--transition);
 }
 
-.header__social:hover > svg > path {
+.header__social:hover>svg>path {
   fill: var(--accent);
 }
 
@@ -262,16 +260,14 @@ svg {
   margin-block-end: 24px;
 }
 
-.hero__headline > br {
+.hero__headline>br {
   display: none;
 }
 
-h1 > span {
-  background-image: linear-gradient(
-    to right,
-    var(--accent) 75%,
-    var(--accent) 75%
-  );
+h1>span {
+  background-image: linear-gradient(to right,
+      var(--accent) 75%,
+      var(--accent) 75%);
   background-position: 0 1.18em;
   background-repeat: repeat-x;
   background-size: 8px 4px;
@@ -340,7 +336,7 @@ h1 > span {
     margin-block-end: 60px;
   }
 
-  .hero__headline > br {
+  .hero__headline>br {
     display: inline-block;
   }
 
@@ -392,7 +388,7 @@ h1 > span {
     margin-block-end: 43px;
   }
 
-  .hero__headline > br {
+  .hero__headline>br {
     display: none;
   }
 
@@ -604,6 +600,7 @@ h1 > span {
   .projects__item:hover .projects__links {
     opacity: 1;
   }
+
   .projects__item:focus-within .projects__links {
     opacity: 1;
   }
@@ -627,7 +624,7 @@ h1 > span {
     transition: opacity 400ms ease-in-out;
   }
 
-  .projects__links:hover ~ .projects__picture::after {
+  .projects__links:hover~.projects__picture::after {
     opacity: 0.5;
   }
 
@@ -668,7 +665,7 @@ h1 > span {
   color: var(--text1);
 }
 
-.contact__control > *::placeholder {
+.contact__control>*::placeholder {
   color: var(--text1);
   opacity: 0.5;
   text-transform: uppercase;
@@ -698,12 +695,12 @@ h1 > span {
   translate: -50% -50%;
 }
 
-.contact input:focus-visible:invalid ~ .contact__invalid-icon,
-.contact textarea:focus-visible:invalid ~ .contact__invalid-icon {
+.contact input:focus-visible:invalid~.contact__invalid-icon,
+.contact textarea:focus-visible:invalid~.contact__invalid-icon {
   display: inline-block;
 }
 
-.contact textarea:focus-visible:invalid ~ .contact__invalid-icon {
+.contact textarea:focus-visible:invalid~.contact__invalid-icon {
   top: 1.2rem;
   right: 1.5rem;
   translate: none;
@@ -765,3 +762,128 @@ footer {
     padding-block: 47px 92px;
   }
 }
+
+
+/* Education Section */
+.education-section {
+  margin-top: 3.75rem;
+  padding: 4rem 1rem;
+  background-color: #111;
+  color: #fff;
+}
+
+.education-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 3rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  background-color: #00ffaa;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  left: 19px;
+  width: 2px;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.timeline-content {
+  background-color: #1a1a1a;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.timeline-date {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 0.8rem;
+}
+
+.calendar-icon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.timeline-content p {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+.timeline-content ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.timeline-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Hover effects */
+.tooltip {
+  position: relative;
+  cursor: help;
+  text-decoration: dotted underline;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: #222;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* end of hover */
