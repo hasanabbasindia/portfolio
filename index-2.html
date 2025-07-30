@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        #premium-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 56px;
+            background: rgba(33, 37, 41, 0.6);
+            backdrop-filter: blur(12px);
+            overflow-x: hidden;
+            overflow-y: auto;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            transition: width 0.3s ease;
+            z-index: 1000;
+        }
+
+        #premium-sidebar:hover {
+            width: 240px;
+        }
+
+        /* Sidebar links */
+        #premium-sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: background 0.2s, padding 0.3s;
+        }
+
+        #premium-sidebar a:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Hide labels by default */
+        #premium-sidebar a span {
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        /* Show labels on hover */
+        #premium-sidebar:hover a span {
+            opacity: 1;
+        }
+
+        /* Optional scrollbar style */
+        #premium-sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #premium-sidebar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        /* Mobile behavior */
+        @media (max-width: 768px) {
+            #premium-sidebar {
+                position: fixed;
+                top: 0;
+                left: -240px;
+                width: 240px;
+                transition: left 0.3s ease;
+            }
+
+            #premium-sidebar.open {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sticky Premium Sidebar Navigation - STARTS -->
+    <!-- <div class="sidebar">
+        <a href="#intro">
+            <strong>📁</strong><span>Intro</span>
+        </a>
+        <a href="#skills">
+            <strong>🔍</strong><span>Skills</span>
+        </a>
+        <a href="#education">
+            <strong>📁</strong><span>Education</span>
+        </a>
+        <a href="#projects">
+            <strong>🛠️</strong><span>Projects</span>
+        </a>
+        <a href="#course">
+            <strong>📬</strong><span>Courses</span>
+        </a>
+        <a href="#contact">
+            <strong>📬</strong><span>Contact</span>
+        </a>
+    </div>
+    Sticky Premium Sidebar Navigation - ENDS -->
+
+    <div id="premium-sidebar" class="sidebar">
+        <a href="#about">
+            <span>🔍</span><span>About Me</span>
+        </a>
+        <a href="#projects">
+            <span>📁</span><span>Projects</span>
+        </a>
+        <a href="#skills">
+            <span>🛠️</span><span>Skills</span>
+        </a>
+        <a href="#contact">
+            <span>📬</span><span>Contact</span>
+        </a>
+    </div>
+
+
+    <!-- Body content here -->
+    <section id="skills">
+        <h2>About</h2>
+        <p>Content about you.</p>
+    </section>
+
+    <section id="education">
+        <h2>Projects</h2>
+        <p>Details of your work.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Skills</h2>
+        <p>What you can do.</p>
+    </section>
+
+    <section id="course">
+        <h2>Course</h2>
+        <p>Ways to reach you.</p>
+    </section>
+    <section id="contact">
+        <h2>Course</h2>
+        <p>Ways to reach you.</p>
+    </section>
+
+
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
