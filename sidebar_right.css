@@ -62,12 +62,14 @@
 @media (max-width: 768px) {
     #premium-sidebar {
         width: 36px !important;
+        height: 66px;
         right: 0;
         transition: width 0.3s ease;
     }
 
     #premium-sidebar.open {
         width: 180px !important;
+        height: unset;
         /* ensure this matches actual needed width */
     }
 
