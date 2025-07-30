@@ -525,7 +525,47 @@
   <!-- Scroll to Top Button -->
   <button id="scrollTopBtn" title="Go to top">↑</button>
 
+
   <script src="script.js"></script>
+  <script>
+    const sidebar = document.getElementById('premium-sidebar');
+    const sidebarLinks = sidebar.querySelectorAll('a');
+
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+
+    let ignoreOutsideClick = false;
+
+    // Step 1: Expand on tap (only once, and allow full open)
+    sidebar.addEventListener('click', (e) => {
+      if (isMobile()) {
+        if (!sidebar.classList.contains('open')) {
+          sidebar.classList.add('open');
+          ignoreOutsideClick = true; // temporarily ignore outside click
+          setTimeout(() => ignoreOutsideClick = false, 300); // let the expand animation finish
+        }
+      }
+    });
+
+    // Step 2: Collapse when a sidebar link is clicked
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (isMobile()) {
+          sidebar.classList.remove('open');
+        }
+      });
+    });
+
+    // Step 3: Collapse on outside click (ignore first accidental trigger)
+    document.addEventListener('click', (e) => {
+      if (isMobile() && !sidebar.contains(e.target) && !ignoreOutsideClick) {
+        sidebar.classList.remove('open');
+      }
+    });
+  </script>
+
+
 </body>
 
 </html>

@@ -44,3 +44,39 @@
 #premium-sidebar:hover a span {
     opacity: 1;
 }
+
+.sidebar-toggle {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1100;
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #premium-sidebar {
+        width: 36px !important;
+        right: 0;
+        transition: width 0.3s ease;
+    }
+
+    #premium-sidebar.open {
+        width: 180px !important;
+        /* ensure this matches actual needed width */
+    }
+
+    #premium-sidebar a span {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    #premium-sidebar.open a span {
+        opacity: 1;
+    }
+}
